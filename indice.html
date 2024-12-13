@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="script.js"></script>
+    <title>Formulário</title>
+</head>
+<body>
+<h2>Teste de inputs</h2>
+<form action="#" method="post" onsubmit="return validaExiste('input')">
+    <label for="input">Input:</label>
+    <input type="text" id="input" required>
+    <button onclick="return validaCorretamente('input')">Enviar</button>
+    <button onclick="return validaInteiro('input')">Verifica inteiro</button>
+</form>
+
+<h2>Validação Combobox</h2>
+<form action="#" method="post">
+  <label for="options">Escolha uma opção:</label>
+  <select id="options" required>
+    <option value="00">--------</option>
+    <option value="01">Opção 01</option>
+    <option value="02">Opção 02</option>
+    <option value="03">Opção 03</option>
+  </select>
+    <br>
+  <button onclick="return validaCombobox('options')">Enviar</button>
+ </form>
+
+<h2>Checkboxes</h2>
+<form action="#" method="post">
+  <input type="checkbox" id="check01" name="checkbox" required>
+  <label for="check01"> Check</label><br>
+  <input type="checkbox" id="check02" name="checkbox">
+  <label for="check02"> Check</label><br>
+  <input type="checkbox" id="check03" name="checkbox">
+  <label for="check03"> Check</label><br><br>
+  <button onclick="return validaCheckbox('check01')">Enviar</button>
+  <button onclick="return contaCheckbox('checkbox')">Contagem</button>
+</form>
+
+<h2>Radios</h2>
+<form action="#" method="post">
+  <input type="radio" id="option01" name="option">
+  <label for="option01">Opção 1</label><br>
+  <input type="radio" id="option02" name="option">
+  <label for="option02">Opção 2</label><br>
+  <input type="radio" id="option03" name="option">
+  <label for="option03">Opção 3</label>
+<br>
+  <button onclick="return checaRadio('option')">Enviar</button>
+</form>
+
+<h2>Formulário de cadastro</h2>
+<form action="#" method="post" onsubmit="return validaLogin('nome', 'login', 'senha')">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" required><br>
+    <label for="login">Login:</label>
+    <input type="text" id="login" required><br>
+    <label for="senha">Senha:</label>
+    <input type="text" id="senha" required><br>
+    <button>Enviar</button>
+</form>
+
+</body>
+</html>
