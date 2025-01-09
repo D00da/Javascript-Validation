@@ -1,3 +1,4 @@
+//Valida se um elemento existe
 function elementoExiste(elemento){
 	if 	(elemento == null){
 		alert("O elemento não existe");
@@ -6,11 +7,9 @@ function elementoExiste(elemento){
 	return true;
 }
 
-//Valida se uma caixa de texto com preenchida com caracteres vazios
+//Valida se uma caixa de texto foi preenchida com caracteres vazios
 function validaExiste(id){
 	var elemento = document.getElementById(id);
-
-	elementoExiste(elemento);
 
 	if (elemento.value == null || elemento.value.length == 0 || (/^\s+$/.test(elemento.value))){
 		alert("Coluna "+id+" não foi preenchida!");
@@ -26,7 +25,6 @@ function validaCorretamente(id){
 	var tamanho = elemento.value.length;
 
 	elementoExiste(elemento);
-	preenchidoExiste(elemento);
 
 	if(tamanho < 1 || tamanho > 10 ){
 		alert("Quantidade inválida de caracteres!");
@@ -131,7 +129,7 @@ function minuscula(str) {
 
 //Valida caracteres especiais
 function especiais(str) {
-    const char = /[!@#$%^&*()\-+={}[\]:;"'<>,.?\/|\\]/;
+    const char = /[!@#$%^&*()\-+={}[\]:;"'<>,.?\/|\\]/; //Caracteres especiais pré-determinados
     return char.test(str);
 }
 
@@ -148,4 +146,14 @@ function validaLogin(nome, login, senha){
 		return false;
 	}
 	return true;
+}
+
+function mostraSenha() {
+	var elemento = document.getElementById("senha");
+	if (elemento.type === "password") {
+		elemento.type = "text";
+	} 
+	else {
+		elemento.type = "password";
+	}
 }
